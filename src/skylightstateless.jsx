@@ -18,7 +18,6 @@ export default class SkyLightStateless extends React.Component {
   render() {
     const mergeStyles = key => Object.assign({}, styles[key], this.props[key]);
     const { isVisible } = this.props;
-    const dialogStyles = mergeStyles('dialogStyles');
     const overlayStyles = mergeStyles('overlayStyles');
     const closeButtonStyle = mergeStyles('closeButtonStyle');
     const titleStyle = mergeStyles('titleStyle');
@@ -37,7 +36,7 @@ export default class SkyLightStateless extends React.Component {
     return isVisible ? (
         <section className="skylight-wrapper">
             {overlay}
-            <div className="skylight-dialog" style={dialogStyles}>
+            <div className="skylight-dialog">
               <a role="button" className="skylight-close-button"
                 onClick={() => this.onCloseClicked()}
                 style={closeButtonStyle}
@@ -74,6 +73,6 @@ SkyLightStateless.defaultProps = {
   title: '',
   showOverlay: true,
   overlayStyles: styles.overlayStyles,
-  dialogStyles: styles.dialogStyles,
+  useSkylightDialogStyles: true,
   closeButtonStyle: styles.closeButtonStyle,
 };
