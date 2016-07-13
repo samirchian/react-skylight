@@ -75,5 +75,8 @@
       "stage-0"
     ],
     "plugins": []
+  },
+  "dependencies": {
+    "css-loader": "^0.23.1"
   }
 }
